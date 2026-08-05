@@ -1,85 +1,35 @@
-const menuHighlights = [
-  { name: "Burrata & Summer Peach", detail: "basil oil · toasted hazelnut", price: "$18" },
-  { name: "Wild Mushroom Tagliatelle", detail: "brown butter · pecorino", price: "$29" },
-  { name: "Ember-Roasted Branzino", detail: "fennel · preserved lemon", price: "$69" },
+const products = [
+  { name: "Arc Table Lamp", category: "Lighting", price: "$148", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85" },
+  { name: "Soft Form Chair", category: "Furniture", price: "$320", image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=85" },
+  { name: "Ripple Glass Set", category: "Tableware", price: "$64", image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85" },
+  { name: "Everyday Carryall", category: "Accessories", price: "$92", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85" },
 ];
 
 export default function Home() {
   return (
     <main>
-      <section className="hero" id="home">
-        <nav className="nav" aria-label="Main navigation">
-          <a className="wordmark" href="#home" aria-label="Luma home">LUMA<span>•</span></a>
-          <div className="navlinks">
-            <a href="#story">Our story</a>
-            <a href="#menu">Menu</a>
-            <a href="#visit">Visit</a>
-          </div>
-          <a className="reserve-small" href="#reserve">Reserve a table</a>
-        </nav>
-
-        <div className="hero-copy">
-          <p className="eyebrow">Seasonal Italian · Las Vegas</p>
-          <h1>Come for dinner.<br /><em>Stay for the night.</em></h1>
-          <p className="intro">A neighborhood dining room where handmade pasta, open-fire cooking, and good wine meet warm hospitality.</p>
-          <div className="hero-actions">
-            <a className="button light" href="#reserve">Book your table <span>↗</span></a>
-            <a className="text-link" href="#menu">Explore the menu <span>↓</span></a>
-          </div>
-        </div>
-        <p className="side-note">Dinner nightly · 5—11 PM</p>
-        <div className="scroll">SCROLL <span></span></div>
+      <div className="announcement">Free shipping on orders over $100</div>
+      <nav className="nav" aria-label="Main navigation">
+        <a className="brand" href="#top">GOOD FORM<span>.</span></a>
+        <div className="navlinks"><a href="#shop">Shop</a><a href="#story">About</a><a href="#journal">Journal</a></div>
+        <a className="cart" href="mailto:orders@goodform.shop?subject=Order%20inquiry">Cart <span>(0)</span></a>
+      </nav>
+      <section className="hero" id="top">
+        <div className="hero-copy"><p className="kicker">Objects for everyday living</p><h1>Less, but<br /><em>much better.</em></h1><p className="lede">Useful, enduring pieces selected for the quiet moments that make a home feel like yours.</p><a className="button dark" href="#shop">Shop the collection <span>↗</span></a></div>
+        <div className="hero-image" role="img" aria-label="A calm modern interior with sculptural furniture"><span>Edition 01 — The Everyday Collection</span></div>
       </section>
-
-      <section className="story" id="story">
-        <div className="story-number">01</div>
-        <div className="story-copy">
-          <p className="eyebrow dark">Our philosophy</p>
-          <h2>Simple food,<br /><em>beautifully made.</em></h2>
-        </div>
-        <div className="story-body">
-          <p>We cook with the rhythm of the seasons, sourcing from small farms and makers we know by name.</p>
-          <p>Our menu changes often. Our promise doesn’t: thoughtful food, honest ingredients, and a table that always feels like yours.</p>
-          <a href="#menu">Discover our story <span>→</span></a>
-        </div>
+      <section className="intro" id="story">
+        <p className="section-label">Our point of view</p><h2>Things worth keeping.</h2><div><p>We find objects that balance form, function, and feeling. No trends, no excess—just considered pieces made to live with for a long time.</p><a href="#journal">Read our story →</a></div>
       </section>
-
-      <section className="menu-section" id="menu">
-        <div className="menu-image" role="img" aria-label="Fresh handmade pasta served at Luma"></div>
-        <div className="menu-panel">
-          <p className="eyebrow">From the kitchen</p>
-          <h2>Tonight’s<br /><em>favorites</em></h2>
-          <div className="menu-list">
-            {menuHighlights.map((item) => (
-              <div className="menu-item" key={item.name}>
-                <div><h3>{item.name}</h3><p>{item.detail}</p></div>
-                <span>{item.price}</span>
-              </div>
-            ))}
-          </div>
-          <a className="button outline" href="#menu">View full menu <span>→</span></a>
-        </div>
+      <section className="shop" id="shop">
+        <div className="section-heading"><div><p className="section-label">Shop</p><h2>New &amp; noteworthy</h2></div><a href="#shop">View all pieces ↗</a></div>
+        <div className="product-grid">{products.map((product) => (<article className="product" key={product.name}><a className="product-image" href={`mailto:orders@goodform.shop?subject=${encodeURIComponent(product.name)}`} style={{ backgroundImage: `url(${product.image})` }} aria-label={`Ask about ${product.name}`}><span>View piece</span></a><div className="product-info"><div><p>{product.category}</p><h3>{product.name}</h3></div><strong>{product.price}</strong></div></article>))}</div>
       </section>
-
-      <section className="quote">
-        <p>“The kind of place you wish<br />was around the corner.”</p>
-        <span>— The Infatuation</span>
+      <section className="feature" id="journal">
+        <div className="feature-image" role="img" aria-label="Handcrafted ceramic pieces on a work table"></div><div className="feature-copy"><p className="section-label">Maker story 01</p><h2>Made slowly.<br />Used daily.</h2><p>Meet the independent studios shaping our collection, where patient hands and honest materials turn everyday objects into lasting companions.</p><a className="button light" href="#shop">Discover the makers <span>↗</span></a></div>
       </section>
-
-      <section className="reserve" id="reserve">
-        <div>
-          <p className="eyebrow">Your table is waiting</p>
-          <h2>Let’s make it<br /><em>a night.</em></h2>
-        </div>
-        <a className="button light large" href="mailto:hello@lumalasvegas.com?subject=Table%20reservation">Reserve a table <span>↗</span></a>
-      </section>
-
-      <footer id="visit">
-        <a className="wordmark footer-mark" href="#home">LUMA<span>•</span></a>
-        <div><p>284 Fremont Street<br />Las Vegas, NV 89101</p><a href="https://maps.google.com/?q=284+Fremont+Street+Las+Vegas+NV+89101" target="_blank" rel="noreferrer">Get directions ↗</a></div>
-        <div><p>Sun—Thu 5—10 PM<br />Fri—Sat 5—11 PM</p><a href="mailto:hello@lumalasvegas.com">hello@lumalasvegas.com</a></div>
-        <p className="copyright">© 2026 Luma</p>
-      </footer>
+      <section className="newsletter"><p className="section-label">Keep in touch</p><h2>Notes on good things.</h2><p>A considered email, every now and then. New pieces, studio visits, and ideas for living well.</p><form action="mailto:hello@goodform.shop" method="post"><label className="sr-only" htmlFor="email">Email address</label><input id="email" type="email" name="email" placeholder="Your email address" required /><button type="submit">Subscribe ↗</button></form></section>
+      <footer><a className="brand footer-brand" href="#top">GOOD FORM<span>.</span></a><div><p>Shop</p><a href="#shop">New arrivals</a><a href="#shop">Home</a><a href="#shop">Accessories</a></div><div><p>Information</p><a href="#story">Our story</a><a href="mailto:hello@goodform.shop">Contact</a><a href="#top">Shipping &amp; returns</a></div><p className="fineprint">© 2026 Good Form<br />Thoughtful objects, thoughtfully sourced.</p></footer>
     </main>
   );
 }
