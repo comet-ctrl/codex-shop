@@ -1,35 +1,21 @@
 const products = [
-  { name: "Arc Table Lamp", category: "Lighting", price: "$148", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85" },
-  { name: "Soft Form Chair", category: "Furniture", price: "$320", image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=85" },
-  { name: "Ripple Glass Set", category: "Tableware", price: "$64", image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85" },
-  { name: "Everyday Carryall", category: "Accessories", price: "$92", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85" },
+  { name: "Sunday Lasagna", category: "Ready to bake · Serves 4", price: "$48", image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=900&q=85" },
+  { name: "Handmade Tagliatelle", category: "Fresh pasta · 500g", price: "$18", image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85" },
+  { name: "Luma Tomato Sugo", category: "House pantry · 16oz", price: "$14", image: "https://images.unsplash.com/photo-1598866594230-a7c12756260f?auto=format&fit=crop&w=900&q=85" },
+  { name: "Dinner for Two", category: "Chef's box · Three courses", price: "$72", image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85" },
 ];
 
 export default function Home() {
   return (
     <main>
-      <div className="announcement">Free shipping on orders over $100</div>
-      <nav className="nav" aria-label="Main navigation">
-        <a className="brand" href="#top">GOOD FORM<span>.</span></a>
-        <div className="navlinks"><a href="#shop">Shop</a><a href="#story">About</a><a href="#journal">Journal</a></div>
-        <a className="cart" href="mailto:orders@goodform.shop?subject=Order%20inquiry">Cart <span>(0)</span></a>
-      </nav>
-      <section className="hero" id="top">
-        <div className="hero-copy"><p className="kicker">Objects for everyday living</p><h1>Less, but<br /><em>much better.</em></h1><p className="lede">Useful, enduring pieces selected for the quiet moments that make a home feel like yours.</p><a className="button dark" href="#shop">Shop the collection <span>↗</span></a></div>
-        <div className="hero-image" role="img" aria-label="A calm modern interior with sculptural furniture"><span>Edition 01 — The Everyday Collection</span></div>
-      </section>
-      <section className="intro" id="story">
-        <p className="section-label">Our point of view</p><h2>Things worth keeping.</h2><div><p>We find objects that balance form, function, and feeling. No trends, no excess—just considered pieces made to live with for a long time.</p><a href="#journal">Read our story →</a></div>
-      </section>
-      <section className="shop" id="shop">
-        <div className="section-heading"><div><p className="section-label">Shop</p><h2>New &amp; noteworthy</h2></div><a href="#shop">View all pieces ↗</a></div>
-        <div className="product-grid">{products.map((product) => (<article className="product" key={product.name}><a className="product-image" href={`mailto:orders@goodform.shop?subject=${encodeURIComponent(product.name)}`} style={{ backgroundImage: `url(${product.image})` }} aria-label={`Ask about ${product.name}`}><span>View piece</span></a><div className="product-info"><div><p>{product.category}</p><h3>{product.name}</h3></div><strong>{product.price}</strong></div></article>))}</div>
-      </section>
-      <section className="feature" id="journal">
-        <div className="feature-image" role="img" aria-label="Handcrafted ceramic pieces on a work table"></div><div className="feature-copy"><p className="section-label">Maker story 01</p><h2>Made slowly.<br />Used daily.</h2><p>Meet the independent studios shaping our collection, where patient hands and honest materials turn everyday objects into lasting companions.</p><a className="button light" href="#shop">Discover the makers <span>↗</span></a></div>
-      </section>
-      <section className="newsletter"><p className="section-label">Keep in touch</p><h2>Notes on good things.</h2><p>A considered email, every now and then. New pieces, studio visits, and ideas for living well.</p><form action="mailto:hello@goodform.shop" method="post"><label className="sr-only" htmlFor="email">Email address</label><input id="email" type="email" name="email" placeholder="Your email address" required /><button type="submit">Subscribe ↗</button></form></section>
-      <footer><a className="brand footer-brand" href="#top">GOOD FORM<span>.</span></a><div><p>Shop</p><a href="#shop">New arrivals</a><a href="#shop">Home</a><a href="#shop">Accessories</a></div><div><p>Information</p><a href="#story">Our story</a><a href="mailto:hello@goodform.shop">Contact</a><a href="#top">Shipping &amp; returns</a></div><p className="fineprint">© 2026 Good Form<br />Thoughtful objects, thoughtfully sourced.</p></footer>
+      <div className="announcement">Order by 3 PM for same-day pickup</div>
+      <nav className="nav" aria-label="Main navigation"><a className="brand" href="#top">LUMA MARKET<span>.</span></a><div className="navlinks"><a href="#shop">Order</a><a href="#story">Our kitchen</a><a href="#visit">Visit</a></div><a className="cart" href="mailto:orders@lumamarket.com?subject=Pickup%20order">Order <span>↗</span></a></nav>
+      <section className="hero" id="top"><div className="hero-copy"><p className="kicker">The Luma kitchen, to go</p><h1>Made here.<br /><em>Finished at home.</em></h1><p className="lede">Fresh pasta, prepared dinners, and the pantry staples we use every night in our restaurant.</p><a className="button dark" href="#shop">Shop the menu <span>↗</span></a></div><div className="hero-image" style={{ backgroundImage: "linear-gradient(0deg, rgba(20,22,18,.38), transparent 40%), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=88')" }} role="img" aria-label="Fresh handmade pasta in the Luma kitchen"><span>Fresh from our kitchen · Tuesday–Sunday</span></div></section>
+      <section className="intro" id="story"><p className="section-label">From our restaurant</p><h2>Dinner, almost done.</h2><div><p>We prep it the same way we do for service: seasonal ingredients, slow sauces, and pasta rolled by hand. You take it home and make it yours.</p><a href="#shop">See what’s cooking →</a></div></section>
+      <section className="shop" id="shop"><div className="section-heading"><div><p className="section-label">This week</p><h2>From the market</h2></div><a href="mailto:orders@lumamarket.com?subject=Weekly%20menu">Ask about today’s menu ↗</a></div><div className="product-grid">{products.map((product) => (<article className="product" key={product.name}><a className="product-image" href={`mailto:orders@lumamarket.com?subject=${encodeURIComponent(product.name)}`} style={{ backgroundImage: `url(${product.image})` }} aria-label={`Order ${product.name}`}><span>Order for pickup</span></a><div className="product-info"><div><p>{product.category}</p><h3>{product.name}</h3></div><strong>{product.price}</strong></div></article>))}</div></section>
+      <section className="feature"><div className="feature-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1500&q=85')" }} role="img" aria-label="Chef preparing food in the restaurant kitchen"></div><div className="feature-copy"><p className="section-label">At the restaurant</p><h2>Stay for<br />dinner.</h2><p>Luma is a neighborhood Italian dining room built around handmade pasta, open-fire cooking, and the kind of hospitality that keeps the table warm.</p><a className="button light" href="mailto:hello@lumamarket.com?subject=Table%20reservation">Reserve a table <span>↗</span></a></div></section>
+      <section className="newsletter"><p className="section-label">The weekly menu</p><h2>Know what’s cooking.</h2><p>New market dishes, seasonal pantry drops, and restaurant news—sent once a week.</p><form action="mailto:hello@lumamarket.com" method="post"><label className="sr-only" htmlFor="email">Email address</label><input id="email" type="email" name="email" placeholder="Your email address" required /><button type="submit">Join the list ↗</button></form></section>
+      <footer id="visit"><a className="brand footer-brand" href="#top">LUMA MARKET<span>.</span></a><div><p>Market hours</p><a href="#shop">Tue–Sun, 11 AM–7 PM</a><a href="#shop">Pickup at the bar</a></div><div><p>Find us</p><a href="https://maps.google.com/?q=284+Fremont+Street+Las+Vegas+NV" target="_blank" rel="noreferrer">284 Fremont Street<br />Las Vegas, Nevada</a><a href="mailto:hello@lumamarket.com">hello@lumamarket.com</a></div><p className="fineprint">© 2026 Luma Market<br />Made with care in Las Vegas.</p></footer>
     </main>
   );
 }
