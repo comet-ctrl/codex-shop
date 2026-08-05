@@ -19,7 +19,7 @@ export default function Home() {
         </nav>
 
         <div className="hero-copy">
-          <p className="eyebrow">Seasonal Italian · Brooklyn</p>
+          <p className="eyebrow">Seasonal Italian · Las Vegas</p>
           <h1>Come for dinner.<br /><em>Stay for the night.</em></h1>
           <p className="intro">A neighborhood dining room where handmade pasta, open-fire cooking, and good wine meet warm hospitality.</p>
           <div className="hero-actions">
@@ -71,13 +71,13 @@ export default function Home() {
           <p className="eyebrow">Your table is waiting</p>
           <h2>Let’s make it<br /><em>a night.</em></h2>
         </div>
-        <a className="button light large" href="mailto:hello@lumabrooklyn.com?subject=Table%20reservation">Reserve a table <span>↗</span></a>
+        <a className="button light large" href="mailto:hello@lumalasvegas.com?subject=Table%20reservation">Reserve a table <span>↗</span></a>
       </section>
 
       <footer id="visit">
         <a className="wordmark footer-mark" href="#home">LUMA<span>•</span></a>
-        <div><p>284 Grand Street<br />Brooklyn, NY 11211</p><a href="https://maps.google.com" target="_blank" rel="noreferrer">Get directions ↗</a></div>
-        <div><p>Sun—Thu 5—10 PM<br />Fri—Sat 5—11 PM</p><a href="mailto:hello@lumabrooklyn.com">hello@lumabrooklyn.com</a></div>
+        <div><p>284 Fremont Street<br />Las Vegas, NV 89101</p><a href="https://maps.google.com/?q=284+Fremont+Street+Las+Vegas+NV+89101" target="_blank" rel="noreferrer">Get directions ↗</a></div>
+        <div><p>Sun—Thu 5—10 PM<br />Fri—Sat 5—11 PM</p><a href="mailto:hello@lumalasvegas.com">hello@lumalasvegas.com</a></div>
         <p className="copyright">© 2026 Luma</p>
       </footer>
     </main>
