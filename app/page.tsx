@@ -1,7 +1,7 @@
 const menuHighlights = [
   { name: "Burrata & Summer Peach", detail: "basil oil · toasted hazelnut", price: "$18" },
   { name: "Wild Mushroom Tagliatelle", detail: "brown butter · pecorino", price: "$29" },
-  { name: "Ember-Roasted Branzino", detail: "fennel · preserved lemon", price: "$36" },
+  { name: "Ember-Roasted Branzino", detail: "fennel · preserved lemon", price: "$69" },
 ];
 
 export default function Home() {
